@@ -53,6 +53,8 @@ flutter:
   assets:
     - assets/images/background.jpg
     - assets/images/logo-01.jpg
+    - assets/images/logo-02.png
+    - assets/images/user.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:
@@ -76,7 +78,12 @@ flutter:
 
       - family: Nonserif
         fonts:
-          - asset: assets/fonts/Nonserif.ttf    
+          - asset: assets/fonts/Nonserif.ttf
+
+      - family: Noir_medium
+        fonts:
+          - asset: assets/fonts/Noir_medium.otf
+
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf

@@ -49,15 +49,11 @@ class _HomeState extends State<Home> {
             MainAxisAlignment.center, //alinear contenido de columna
         children: <Widget>[
           SizedBox(
-            height: 25.0,
+            height: 15.0,
           ),
           Encabezado(),
           SizedBox(
             height: 20.0,
-          ),
-          BuscarUsuario(),
-          SizedBox(
-            height: 15.0,
           ),
           InfoUsuario1(),
           SizedBox(
@@ -76,6 +72,10 @@ class _HomeState extends State<Home> {
             height: 15.0,
           ),
           InfoUsuario5(),
+          SizedBox(
+            height: 15.0,
+          ),
+          InfoUsuario6(),
           SizedBox(
             height: 200.0,
           ),
@@ -97,26 +97,8 @@ class _HomeState extends State<Home> {
           width: 300.0,
           height: 20.0,
         ),
-        SizedBox.shrink(),
       ],
     ));
-  }
-
-  //Crear widget para Usuario1
-  Widget BuscarUsuario() {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0),
-      child: TextField(
-        textAlign: TextAlign.left,
-        style: TextStyle(
-            fontFamily: 'Noir_medium', color: Color(0xFFFC5C9C), fontSize: 20),
-        decoration: InputDecoration(
-          hintText: 'Usuario',
-          fillColor: Color(0xFFFCCDE2),
-          filled: true,
-        ),
-      ),
-    );
   }
 
   //Crear widget para Usuario1
@@ -191,7 +173,7 @@ class _HomeState extends State<Home> {
         ));
   }
 
-  //Crear widget para Usuario5
+  //Crear widget para Usuario4
   Widget InfoUsuario4() {
     return Container(
         color: Color(0xFF9E2A63),
@@ -233,6 +215,30 @@ class _HomeState extends State<Home> {
               width: 10,
             ),
             Text('Usuario5',
+                style: TextStyle(
+                    fontFamily: 'Noir', color: Colors.white, fontSize: 20)),
+          ],
+        ));
+  }
+
+  //Crear widget para Usuario6
+  Widget InfoUsuario6() {
+    return Container(
+        color: Color(0xFF9E2A63),
+        height: 40.0,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Image(
+              alignment: Alignment.topLeft,
+              image: (AssetImage('assets/images/user.png')),
+              width: 50.0,
+              height: 20.0,
+            ),
+            SizedBox(
+              width: 10,
+            ),
+            Text('Usuario6',
                 style: TextStyle(
                     fontFamily: 'Noir', color: Colors.white, fontSize: 20)),
           ],
