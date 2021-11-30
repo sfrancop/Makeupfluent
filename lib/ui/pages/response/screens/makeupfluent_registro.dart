@@ -59,17 +59,23 @@ class _HomeState extends State<Home> {
         children: <Widget>[
           Nombre(),
           SizedBox(
-            height: 20.0,
+            height: 70.0,
           ),
           Logo(),
           SizedBox(
-            height: 20.0,
+            height: 30.0,
           ),
           Usuario(),
+          SizedBox(
+            height: 15.0,
+          ),
           Correo(),
+          SizedBox(
+            height: 15.0,
+          ),
           Contrasena(),
           SizedBox(
-            height: 5.0,
+            height: 15.0,
           ),
           BotonInicio1(),
         ],
@@ -91,13 +97,6 @@ class _HomeState extends State<Home> {
   //Crear widget para logo app
   Widget Logo() {
     return Container(
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        border: Border.all(
-          color: Color(0xFFFCCDE2),
-          width: 20.0,
-        ),
-      ),
       child: Image(
         image: (AssetImage('assets/images/logo-01.jpg')),
         width: 150.0,
@@ -109,15 +108,20 @@ class _HomeState extends State<Home> {
   //Crear widget para Campo Usuario
   Widget Usuario() {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0),
-      child: TextField(
-        textAlign: TextAlign.center,
-        style: TextStyle(
-            fontFamily: 'NonSerif', color: Color(0xFFFC5C9C), fontSize: 20),
-        decoration: InputDecoration(
-          hintText: 'Nombre de Usuario',
-          fillColor: Color(0xFFFCCDE2),
-          filled: true,
+      width: 300.0,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(30),
+        child: TextField(
+          textAlign: TextAlign.center,
+          style: TextStyle(
+              fontFamily: 'Noir_medium',
+              color: Color(0xFFFC5C9C),
+              fontSize: 20),
+          decoration: InputDecoration(
+            hintText: 'Nombre de Usuario',
+            fillColor: Color(0xFFFCCDE2),
+            filled: true,
+          ),
         ),
       ),
     );
@@ -127,15 +131,20 @@ class _HomeState extends State<Home> {
 
   Widget Correo() {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0),
-      child: TextField(
-        textAlign: TextAlign.center,
-        style: TextStyle(
-            fontFamily: 'NonSerif', color: Color(0xFFFC5C9C), fontSize: 20),
-        decoration: InputDecoration(
-          hintText: 'Correo',
-          fillColor: Color(0xFFFCCDE2),
-          filled: true,
+      width: 300.0,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(30),
+        child: TextField(
+          textAlign: TextAlign.center,
+          style: TextStyle(
+              fontFamily: 'Noir_medium',
+              color: Color(0xFFFC5C9C),
+              fontSize: 20),
+          decoration: InputDecoration(
+            hintText: 'Correo',
+            fillColor: Color(0xFFFCCDE2),
+            filled: true,
+          ),
         ),
       ),
     );
@@ -144,15 +153,20 @@ class _HomeState extends State<Home> {
   //Crear widget para Contraseña
   Widget Contrasena() {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0),
-      child: TextField(
-        textAlign: TextAlign.center,
-        style: TextStyle(
-            fontFamily: 'NonSerif', color: Color(0xFFFC5C9C), fontSize: 20),
-        decoration: InputDecoration(
-          hintText: 'Contraseña',
-          fillColor: Color(0xFFFCCDE2),
-          filled: true,
+      width: 300.0,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(30.0),
+        child: TextField(
+          textAlign: TextAlign.center,
+          style: TextStyle(
+              fontFamily: 'Noir_medium',
+              color: Color(0xFFFC5C9C),
+              fontSize: 20),
+          decoration: InputDecoration(
+            hintText: 'Contraseña',
+            fillColor: Color(0xFFFCCDE2),
+            filled: true,
+          ),
         ),
       ),
     );
@@ -160,32 +174,23 @@ class _HomeState extends State<Home> {
 
   //Crear widget para inicio sesion
   Widget BotonInicio1() {
-    return MaterialButton(
-      color: Color(0xFFFCCDE2),
-      minWidth: 200.0,
-      height: 50.0,
-      child: Text(
-        'Listo',
-        style: TextStyle(
-            fontFamily: 'NonSerif', color: Color(0xFFFC5C9C), fontSize: 20),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(30),
+      child: MaterialButton(
+        color: Color(0xFFFCCDE2),
+        minWidth: 200.0,
+        height: 50.0,
+        child: Text(
+          'Listo',
+          style: TextStyle(
+              fontFamily: 'Noir_medium',
+              color: Color(0xFFFC5C9C),
+              fontSize: 20),
+        ),
+        onPressed: () {
+          print('Boton Funcionando');
+        },
       ),
-      onPressed: () {
-        print('Boton Funcionando');
-      },
     );
   }
-
-  //Crear widget para Recuperar contrasena
-  //Widget RecuperarPass() {
-  //  return TextButton(
-  //    child: Text('Recuperar Contraseña',
-  //        style: TextStyle(
-  //            color: Colors.black,
-  //            fontSize: 15.0,
-  //            fontWeight: FontWeight.bold)),
-  //    onPressed: () {
-  //      print('Boton Funcionando');
-  //    },
-  //  );
-  //}
 }

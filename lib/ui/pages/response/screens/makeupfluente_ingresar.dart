@@ -54,20 +54,23 @@ class _HomeState extends State<Home> {
         children: <Widget>[
           Nombre(),
           SizedBox(
-            height: 100.0,
+            height: 80.0,
           ),
           Logo(),
           SizedBox(
-            height: 5.0,
+            height: 30.0,
           ),
           Correo(),
+          SizedBox(
+            height: 25.0,
+          ),
           Contrasena(),
           SizedBox(
-            height: 10.0,
+            height: 25.0,
           ),
           Registrarse(),
           SizedBox(
-            height: 20.0,
+            height: 25.0,
           ),
           BotonInicio1(),
         ],
@@ -90,7 +93,7 @@ class _HomeState extends State<Home> {
   Widget Logo() {
     return Container(
       child: Image(
-        image: (AssetImage('assets/images/logo-01.jpg')),
+        image: (AssetImage('assets/images/vector logo-01-01.png')),
         width: 150.0,
         height: 150.0,
       ),
@@ -101,32 +104,43 @@ class _HomeState extends State<Home> {
 
   Widget Correo() {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0),
-      child: TextField(
-        textAlign: TextAlign.center,
-        style: TextStyle(
-            fontFamily: 'NonSerif', color: Color(0xFFFC5C9C), fontSize: 20),
-        decoration: InputDecoration(
-          hintText: 'Correo',
-          fillColor: Color(0xFFFCCDE2),
-          filled: true,
+      width: 300.0,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(30),
+        child: TextField(
+          textAlign: TextAlign.center,
+          style: TextStyle(
+              fontFamily: 'Noir_medium',
+              color: Color(0xFFFC5C9C),
+              fontSize: 20),
+          decoration: InputDecoration(
+            hintText: 'Correo',
+            fillColor: Color(0xFFFCCDE2),
+            filled: true,
+          ),
         ),
       ),
     );
   }
 
   //Crear widget para Contraseña
+  //Crear widget para Contraseña
   Widget Contrasena() {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0),
-      child: TextField(
-        textAlign: TextAlign.center,
-        style: TextStyle(
-            fontFamily: 'NonSerif', color: Color(0xFFFC5C9C), fontSize: 20),
-        decoration: InputDecoration(
-          hintText: 'Contraseña',
-          fillColor: Color(0xFFFCCDE2),
-          filled: true,
+      width: 300.0,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(30.0),
+        child: TextField(
+          textAlign: TextAlign.center,
+          style: TextStyle(
+              fontFamily: 'Noir_medium',
+              color: Color(0xFFFC5C9C),
+              fontSize: 20),
+          decoration: InputDecoration(
+            hintText: 'Contraseña',
+            fillColor: Color(0xFFFCCDE2),
+            filled: true,
+          ),
         ),
       ),
     );
@@ -137,7 +151,9 @@ class _HomeState extends State<Home> {
     return TextButton(
       child: Text('No tienes cuenta? Creala',
           style: TextStyle(
-              fontFamily: 'NonSerif', color: Color(0xFFFC5C9C), fontSize: 20)),
+              fontFamily: 'Noir_medium',
+              color: Color(0xFFFC5C9C),
+              fontSize: 20)),
       onPressed: () {
         print('Boton Funcionando');
       },
@@ -146,18 +162,23 @@ class _HomeState extends State<Home> {
 
   //Crear widget para inicio sesion
   Widget BotonInicio1() {
-    return MaterialButton(
-      color: Color(0xFFFCCDE2),
-      minWidth: 200.0,
-      height: 50.0,
-      child: Text(
-        'Listo',
-        style: TextStyle(
-            fontFamily: 'NonSerif', color: Color(0xFFFC5C9C), fontSize: 20),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(30),
+      child: MaterialButton(
+        color: Color(0xFFFCCDE2),
+        minWidth: 200.0,
+        height: 50.0,
+        child: Text(
+          'Listo',
+          style: TextStyle(
+              fontFamily: 'Noir_medium',
+              color: Color(0xFFFC5C9C),
+              fontSize: 20),
+        ),
+        onPressed: () {
+          print('Boton Funcionando');
+        },
       ),
-      onPressed: () {
-        print('Boton Funcionando');
-      },
     );
   }
 }

@@ -52,7 +52,7 @@ class _HomeState extends State<Home> {
             MainAxisAlignment.center, //alinear contenido de columna
         children: <Widget>[
           SizedBox(
-            height: 21.0,
+            height: 25.0,
           ),
           Encabezado(),
           SizedBox(
@@ -94,15 +94,20 @@ class _HomeState extends State<Home> {
   //Crear widget para Campo Post, texto a ingresar por el usuario
   Widget ContenidoHistory() {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0),
-      child: TextField(
-        textAlign: TextAlign.center,
-        style: TextStyle(
-            fontFamily: 'Noir_medium', color: Color(0xFFFC5C9C), fontSize: 20),
-        decoration: InputDecoration(
-          hintText: 'Texto',
-          fillColor: Color(0xFFFC5C9C),
-          filled: true,
+      width: 400.0,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(30.0),
+        child: TextField(
+          textAlign: TextAlign.left,
+          style: TextStyle(
+              fontFamily: 'Noir_medium',
+              color: Color(0xFFFCCDE2),
+              fontSize: 20),
+          decoration: InputDecoration(
+            hintText: 'Texto',
+            fillColor: Color(0xFFFCCDE2),
+            filled: true,
+          ),
         ),
       ),
     );
@@ -178,3 +183,4 @@ class _HomeState extends State<Home> {
             )));
   }
 }
+

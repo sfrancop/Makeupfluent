@@ -171,46 +171,73 @@ class _HomeState extends State<Home> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             SizedBox(
-              width: 35.0,
+              width: 30.0,
             ),
-            TextButton(
-              child: Text('Usuario',
-                  style: TextStyle(
-                      fontFamily: 'Lemon Milk',
-                      color: Color(0xFF9E2A63),
-                      fontSize: 15.0)),
-              onPressed: () {
-                print('Boton1 OK');
-              },
-            ),
-            SizedBox(
-              width: 35.0,
-            ),
-            TextButton(
-              child: Text('Usuario',
-                  style: TextStyle(
-                      fontFamily: 'Lemon Milk',
-                      color: Color(0xFF9E2A63),
-                      fontSize: 15.0)),
-              onPressed: () {
-                print('Boton2 OK');
-              },
+            Container(
+              width: 85.0,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(30),
+                child: MaterialButton(
+                  color: Color(0xFF9E2A63),
+                  child: Text(
+                    'Usuario',
+                    style: TextStyle(
+                        fontFamily: 'Noir_medium',
+                        color: Colors.white,
+                        fontSize: 15),
+                  ),
+                  onPressed: () {
+                    print('Boton Funcionando');
+                  },
+                ),
+              ),
             ),
             SizedBox(
-              width: 35.0,
+              width: 40.0,
             ),
-            TextButton(
-              child: Text('Usuario',
-                  style: TextStyle(
-                      fontFamily: 'Lemon Milk',
-                      color: Color(0xFF9E2A63),
-                      fontSize: 15.0)),
-              onPressed: () {
-                print('Boton3 OK');
-              },
+            Container(
+              width: 85.0,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(30),
+                child: MaterialButton(
+                  color: Color(0xFF9E2A63),
+                  child: Text(
+                    'Usuario',
+                    style: TextStyle(
+                        fontFamily: 'Noir_medium',
+                        color: Colors.white,
+                        fontSize: 15),
+                  ),
+                  onPressed: () {
+                    print('Boton Funcionando');
+                  },
+                ),
+              ),
             ),
             SizedBox(
-              width: 20.0,
+              width: 40.0,
+            ),
+            Container(
+              width: 85.0,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(30),
+                child: MaterialButton(
+                  color: Color(0xFF9E2A63),
+                  child: Text(
+                    'Usuario',
+                    style: TextStyle(
+                        fontFamily: 'Noir_medium',
+                        color: Colors.white,
+                        fontSize: 15),
+                  ),
+                  onPressed: () {
+                    print('Boton Funcionando');
+                  },
+                ),
+              ),
+            ),
+            SizedBox(
+              width: 40.0,
             ),
           ],
         ));
@@ -265,46 +292,73 @@ class _HomeState extends State<Home> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             SizedBox(
-              width: 35.0,
+              width: 30.0,
             ),
-            TextButton(
-              child: Text('Usuario',
-                  style: TextStyle(
-                      fontFamily: 'Lemon Milk',
-                      color: Color(0xFF9E2A63),
-                      fontSize: 15.0)),
-              onPressed: () {
-                print('Boton1 OK');
-              },
-            ),
-            SizedBox(
-              width: 35.0,
-            ),
-            TextButton(
-              child: Text('Usuario',
-                  style: TextStyle(
-                      fontFamily: 'Lemon Milk',
-                      color: Color(0xFF9E2A63),
-                      fontSize: 15.0)),
-              onPressed: () {
-                print('Boton2 OK');
-              },
+            Container(
+              width: 85.0,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(30),
+                child: MaterialButton(
+                  color: Color(0xFF9E2A63),
+                  child: Text(
+                    'Usuario',
+                    style: TextStyle(
+                        fontFamily: 'Noir_medium',
+                        color: Colors.white,
+                        fontSize: 15),
+                  ),
+                  onPressed: () {
+                    print('Boton Funcionando');
+                  },
+                ),
+              ),
             ),
             SizedBox(
-              width: 35.0,
+              width: 40.0,
             ),
-            TextButton(
-              child: Text('Usuario',
-                  style: TextStyle(
-                      fontFamily: 'Lemon Milk',
-                      color: Color(0xFF9E2A63),
-                      fontSize: 15.0)),
-              onPressed: () {
-                print('Boton3 OK');
-              },
+            Container(
+              width: 85.0,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(30),
+                child: MaterialButton(
+                  color: Color(0xFF9E2A63),
+                  child: Text(
+                    'Usuario',
+                    style: TextStyle(
+                        fontFamily: 'Noir_medium',
+                        color: Colors.white,
+                        fontSize: 15),
+                  ),
+                  onPressed: () {
+                    print('Boton Funcionando');
+                  },
+                ),
+              ),
             ),
             SizedBox(
-              width: 20.0,
+              width: 40.0,
+            ),
+            Container(
+              width: 85.0,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(30),
+                child: MaterialButton(
+                  color: Color(0xFF9E2A63),
+                  child: Text(
+                    'Usuario',
+                    style: TextStyle(
+                        fontFamily: 'Noir_medium',
+                        color: Colors.white,
+                        fontSize: 15),
+                  ),
+                  onPressed: () {
+                    print('Boton Funcionando');
+                  },
+                ),
+              ),
+            ),
+            SizedBox(
+              width: 40.0,
             ),
           ],
         ));
@@ -359,46 +413,73 @@ class _HomeState extends State<Home> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             SizedBox(
-              width: 35.0,
+              width: 30.0,
             ),
-            TextButton(
-              child: Text('Usuario',
-                  style: TextStyle(
-                      fontFamily: 'Lemon Milk',
-                      color: Color(0xFF9E2A63),
-                      fontSize: 15.0)),
-              onPressed: () {
-                print('Boton1 OK');
-              },
-            ),
-            SizedBox(
-              width: 35.0,
-            ),
-            TextButton(
-              child: Text('Usuario',
-                  style: TextStyle(
-                      fontFamily: 'Lemon Milk',
-                      color: Color(0xFF9E2A63),
-                      fontSize: 15.0)),
-              onPressed: () {
-                print('Boton2 OK');
-              },
+            Container(
+              width: 85.0,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(30),
+                child: MaterialButton(
+                  color: Color(0xFF9E2A63),
+                  child: Text(
+                    'Usuario',
+                    style: TextStyle(
+                        fontFamily: 'Noir_medium',
+                        color: Colors.white,
+                        fontSize: 15),
+                  ),
+                  onPressed: () {
+                    print('Boton Funcionando');
+                  },
+                ),
+              ),
             ),
             SizedBox(
-              width: 35.0,
+              width: 40.0,
             ),
-            TextButton(
-              child: Text('Usuario',
-                  style: TextStyle(
-                      fontFamily: 'Lemon Milk',
-                      color: Color(0xFF9E2A63),
-                      fontSize: 15.0)),
-              onPressed: () {
-                print('Boton3 OK');
-              },
+            Container(
+              width: 85.0,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(30),
+                child: MaterialButton(
+                  color: Color(0xFF9E2A63),
+                  child: Text(
+                    'Usuario',
+                    style: TextStyle(
+                        fontFamily: 'Noir_medium',
+                        color: Colors.white,
+                        fontSize: 15),
+                  ),
+                  onPressed: () {
+                    print('Boton Funcionando');
+                  },
+                ),
+              ),
             ),
             SizedBox(
-              width: 20.0,
+              width: 40.0,
+            ),
+            Container(
+              width: 85.0,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(30),
+                child: MaterialButton(
+                  color: Color(0xFF9E2A63),
+                  child: Text(
+                    'Usuario',
+                    style: TextStyle(
+                        fontFamily: 'Noir_medium',
+                        color: Colors.white,
+                        fontSize: 15),
+                  ),
+                  onPressed: () {
+                    print('Boton Funcionando');
+                  },
+                ),
+              ),
+            ),
+            SizedBox(
+              width: 40.0,
             ),
           ],
         ));

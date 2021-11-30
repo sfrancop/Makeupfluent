@@ -115,11 +115,18 @@ class _HomeState extends State<Home> {
   //Crear widget para Usuario1
   Widget InfoUsuario1() {
     return Container(
-        color: Color(0xFF9E2A63),
         height: 40.0,
+        width: 380.0,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10.0),
+          color: Color(0xFF9E2A63),
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
+            SizedBox(
+              width: 20,
+            ),
             Image(
               alignment: Alignment.topLeft,
               image: (AssetImage('assets/images/user.png')),
@@ -131,7 +138,9 @@ class _HomeState extends State<Home> {
             ),
             Text('Usuario1',
                 style: TextStyle(
-                    fontFamily: 'Noir', color: Colors.white, fontSize: 20)),
+                    fontFamily: 'Noir_medium',
+                    color: Colors.white,
+                    fontSize: 20)),
           ],
         ));
   }
@@ -149,11 +158,18 @@ class _HomeState extends State<Home> {
   //Crear widget para Usuario2
   Widget InfoUsuario2() {
     return Container(
-        color: Color(0xFF9E2A63),
         height: 40.0,
+        width: 380.0,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10.0),
+          color: Color(0xFF9E2A63),
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
+            SizedBox(
+              width: 20,
+            ),
             Image(
               alignment: Alignment.topLeft,
               image: (AssetImage('assets/images/user.png')),
@@ -163,9 +179,11 @@ class _HomeState extends State<Home> {
             SizedBox(
               width: 10,
             ),
-            Text('Usuario2',
+            Text('Usuario1',
                 style: TextStyle(
-                    fontFamily: 'Noir', color: Colors.white, fontSize: 20)),
+                    fontFamily: 'Noir_medium',
+                    color: Colors.white,
+                    fontSize: 20)),
           ],
         ));
   }
@@ -183,11 +201,18 @@ class _HomeState extends State<Home> {
   //Crear widget para Usuario2
   Widget InfoUsuario3() {
     return Container(
-        color: Color(0xFF9E2A63),
         height: 40.0,
+        width: 380.0,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10.0),
+          color: Color(0xFF9E2A63),
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
+            SizedBox(
+              width: 20,
+            ),
             Image(
               alignment: Alignment.topLeft,
               image: (AssetImage('assets/images/user.png')),
@@ -197,9 +222,11 @@ class _HomeState extends State<Home> {
             SizedBox(
               width: 10,
             ),
-            Text('Usuario3',
+            Text('Usuario1',
                 style: TextStyle(
-                    fontFamily: 'Noir', color: Colors.white, fontSize: 20)),
+                    fontFamily: 'Noir_medium',
+                    color: Colors.white,
+                    fontSize: 20)),
           ],
         ));
   }
