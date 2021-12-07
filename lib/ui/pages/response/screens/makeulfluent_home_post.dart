@@ -2,18 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:misiontic_template/ui/app.dart';
 import 'package:misiontic_template/ui/theme/text_styles.dart';
 
-//void main() {
-//  WidgetsFlutterBinding.ensureInitialized();
-//  runApp(const App());
-//}
-
-void main() {
-  runApp(Myapp());
-}
-
-// construir una clase para el widget Myapp
-class Myapp extends StatelessWidget {
-  const Myapp({Key? key}) : super(key: key);
+// construir una clase para el widget my_app
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -79,7 +70,7 @@ class _HomeState extends State<Home> {
           SizedBox(
             height: 170.0,
           ),
-          BarraInfNav()
+        //  BarraInfNav()
         ],
       )),
     );
@@ -179,7 +170,7 @@ class _HomeState extends State<Home> {
             SizedBox(
               width: 10,
             ),
-            Text('Usuario1',
+            Text('Usuario2',
                 style: TextStyle(
                     fontFamily: 'Noir_medium',
                     color: Colors.white,
@@ -222,7 +213,7 @@ class _HomeState extends State<Home> {
             SizedBox(
               width: 10,
             ),
-            Text('Usuario1',
+            Text('Usuario3',
                 style: TextStyle(
                     fontFamily: 'Noir_medium',
                     color: Colors.white,
@@ -241,59 +232,4 @@ class _HomeState extends State<Home> {
     );
   }
 
-  //Crear widget para Barra Navegacion Inferior
-  Widget BarraInfNav() {
-    return BottomAppBar(
-        color: Color(0xFF9E2A63),
-        shape: CircularNotchedRectangle(),
-        child: Container(
-            height: 50,
-            padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 1.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                IconButton(
-                  icon: Icon(
-                    Icons.home,
-                    color: Colors.white,
-                    size: 30,
-                  ),
-                  onPressed: () {
-                    print('Icono1 OK');
-                  },
-                ),
-                IconButton(
-                  icon: Icon(
-                    Icons.timelapse,
-                    color: Colors.white,
-                    size: 30,
-                  ),
-                  onPressed: () {
-                    print('Icono2 OK');
-                  },
-                ),
-                SizedBox.shrink(),
-                IconButton(
-                  icon: Icon(
-                    Icons.chat_outlined,
-                    color: Colors.white,
-                    size: 30,
-                  ),
-                  onPressed: () {
-                    print('Icono3 OK');
-                  },
-                ),
-                IconButton(
-                  icon: Icon(
-                    Icons.shopping_bag_outlined,
-                    color: Colors.white,
-                    size: 30,
-                  ),
-                  onPressed: () {
-                    print('Icono4 OK');
-                  },
-                )
-              ],
-            )));
-  }
 }
