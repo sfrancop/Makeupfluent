@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:misiontic_template/ui/app.dart';
 import 'package:misiontic_template/ui/theme/text_styles.dart';
 
@@ -7,13 +8,13 @@ import 'package:misiontic_template/ui/theme/text_styles.dart';
 //  runApp(const App());
 //}
 
-void main() {
-  runApp(Myapp());
-}
+//void main() {
+//  runApp(Myapp());
+//}
 
 // construir una clase para el widget Myapp
-class Myapp extends StatelessWidget {
-  const Myapp({Key? key}) : super(key: key);
+class PostPage extends StatelessWidget {
+  const PostPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +65,7 @@ class _HomeState extends State<Home> {
           ),
           Publicar(),
           SizedBox(
-            height: 360.0,
+            height: 330.0,
           ),
           BarraInfNav()
         ],
@@ -75,18 +76,28 @@ class _HomeState extends State<Home> {
   //Crear widget para Encabezado Vista
   Widget Encabezado() {
     return Container(
-      decoration: BoxDecoration(
-        shape: BoxShape.rectangle,
-        border: Border.all(
-          color: Color(0xFFFFFFFF),
-          width: 1.0,
-        ),
-      ),
-      child: Image(
-        alignment: Alignment.topLeft,
-        image: (AssetImage('assets/images/logo-02.png')),
-        width: 400.0,
-        height: 20.0,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Image(
+            alignment: Alignment.topLeft,
+            image: (AssetImage('assets/images/logo-02.png')),
+            width: 300.0,
+            height: 20.0,
+          ),
+          SizedBox.shrink(),
+          IconButton(
+            icon: Icon(
+              Icons.arrow_back,
+              color: Color(0xFFFC5C9C),
+              size: 30,
+            ),
+            onPressed: () {
+              Get.back();
+              print('Icono1 OK');
+            },
+          ),
+        ],
       ),
     );
   }
@@ -176,6 +187,7 @@ class _HomeState extends State<Home> {
                     size: 30,
                   ),
                   onPressed: () {
+                    Get.back();
                     print('Icono4 OK');
                   },
                 )

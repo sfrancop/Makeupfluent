@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:misiontic_template/constants.dart';
 import 'package:misiontic_template/ui/app.dart';
 import 'package:misiontic_template/ui/theme/text_styles.dart';
 
@@ -7,13 +9,13 @@ import 'package:misiontic_template/ui/theme/text_styles.dart';
 //  runApp(const App());
 //}
 
-void main() {
-  runApp(Myapp());
-}
+//void main() {
+//  runApp(Myapp());
+//}
 
 // construir una clase para el widget Myapp
-class Myapp extends StatelessWidget {
-  const Myapp({Key? key}) : super(key: key);
+class SignUp extends StatelessWidget {
+  const SignUp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -188,6 +190,7 @@ class _HomeState extends State<Home> {
               fontSize: 20),
         ),
         onPressed: () {
+          Get.toNamed(home_Route);
           print('Boton Funcionando');
         },
       ),

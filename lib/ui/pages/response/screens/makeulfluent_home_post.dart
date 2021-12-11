@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:misiontic_template/constants.dart';
 import 'package:misiontic_template/ui/app.dart';
 import 'package:misiontic_template/ui/theme/text_styles.dart';
 
@@ -8,228 +10,181 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "MAKEUPFLUENT",
-      home: Home(),
-      debugShowCheckedModeBanner: false,
+    String name = Get.arguments;
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            //Contenedor para encabezado Vista
+            Container(
+                child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Image(
+                  alignment: Alignment.topLeft,
+                  image: (AssetImage('assets/images/logo-02.png')),
+                  width: 300.0,
+                  height: 20.0,
+                ),
+                SizedBox.shrink(),
+                IconButton(
+                  icon: Icon(
+                    Icons.add,
+                    color: Color(0xFFFC5C9C),
+                    size: 30,
+                  ),
+                  onPressed: () {
+                    Get.toNamed(post_Route);
+                    print('Icono1 OK');
+                  },
+                ),
+              ],
+            )),
+            //Presentar nombre de Usuario en Vista
+            Text("Hola ${name}"),
+            SizedBox(
+              height: 15.0,
+            ),
+            //Contenedor para Encabezado Usuario 1
+            Container(
+                height: 40.0,
+                width: 380.0,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.0),
+                  color: Color(0xFF9E2A63),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      width: 20,
+                    ),
+                    Image(
+                      alignment: Alignment.topLeft,
+                      image: (AssetImage('assets/images/user.png')),
+                      width: 50.0,
+                      height: 20.0,
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text('Usuario1',
+                        style: TextStyle(
+                            fontFamily: 'Noir_medium',
+                            color: Colors.white,
+                            fontSize: 20.0)),
+                  ],
+                )),
+            SizedBox(
+              height: 5.0,
+            ),
+            //Representacion Texto Escrito por Usuario
+            Text(
+              'Lorem Ipsum is simply dummy text of the printing and typesetting',
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                  fontFamily: 'Noir_medium',
+                  color: Color(0xFFFC5C9C),
+                  fontSize: 20),
+            ),
+            SizedBox(
+              height: 15.0,
+            ),
+            //Contenedor para Encabezado Usuario 2
+            Container(
+                height: 40.0,
+                width: 380.0,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.0),
+                  color: Color(0xFF9E2A63),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      width: 20,
+                    ),
+                    Image(
+                      alignment: Alignment.topLeft,
+                      image: (AssetImage('assets/images/user.png')),
+                      width: 50.0,
+                      height: 20.0,
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text('Usuario2',
+                        style: TextStyle(
+                            fontFamily: 'Noir_medium',
+                            color: Colors.white,
+                            fontSize: 20.0)),
+                  ],
+                )),
+            SizedBox(
+              height: 5.0,
+            ),
+            //Representacion Texto Escrito por Usuario2
+            Text(
+              'Lorem Ipsum is simply dummy text of the printing and typesetting',
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                  fontFamily: 'Noir_medium',
+                  color: Color(0xFFFC5C9C),
+                  fontSize: 20),
+            ),
+            SizedBox(
+              height: 15.0,
+            ),
+            //Contenedor para Encabezado Usuario 3
+            Container(
+                height: 40.0,
+                width: 380.0,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.0),
+                  color: Color(0xFF9E2A63),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      width: 20,
+                    ),
+                    Image(
+                      alignment: Alignment.topLeft,
+                      image: (AssetImage('assets/images/user.png')),
+                      width: 50.0,
+                      height: 20.0,
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text('Usuario3',
+                        style: TextStyle(
+                            fontFamily: 'Noir_medium',
+                            color: Colors.white,
+                            fontSize: 20.0)),
+                  ],
+                )),
+            SizedBox(
+              height: 5.0,
+            ),
+            //Representacion Texto Escrito por Usuario2
+            Text(
+              'Lorem Ipsum is simply dummy text of the printing and typesetting',
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                  fontFamily: 'Noir_medium',
+                  color: Color(0xFFFC5C9C),
+                  fontSize: 20),
+            ),
+            SizedBox(
+              height: 15.0,
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
 
-class Home extends StatefulWidget {
-  Home({Key? key}) : super(key: key);
-
-  @override
-  _HomeState createState() => _HomeState();
-}
-
-class _HomeState extends State<Home> {
-  @override
-  Widget build(BuildContext context) {
-    return (Scaffold(
-        //Cuerpo de la aplicacion
-        body: Cuerpo()));
-  }
-
-  //crear widget con imagen de fondo
-  Widget Cuerpo() {
-    return Container(
-      child: Center(
-          child: Column(
-        mainAxisAlignment:
-            MainAxisAlignment.center, //alinear contenido de columna
-        children: <Widget>[
-          SizedBox(
-            height: 15.0,
-          ),
-          Encabezado(),
-          SizedBox(
-            height: 20.0,
-          ),
-          InfoUsuario1(),
-          SizedBox(
-            height: 15.0,
-          ),
-          UserPost1(),
-          SizedBox(
-            height: 15.0,
-          ),
-          InfoUsuario2(),
-          SizedBox(
-            height: 15.0,
-          ),
-          UserPost2(),
-          SizedBox(
-            height: 15.0,
-          ),
-          InfoUsuario3(),
-          SizedBox(
-            height: 15.0,
-          ),
-          UserPost3(),
-          SizedBox(
-            height: 170.0,
-          ),
-        //  BarraInfNav()
-        ],
-      )),
-    );
-  }
-
-  //Crear widget para Encabezado Vista
-  Widget Encabezado() {
-    return Container(
-        child: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Image(
-          alignment: Alignment.topLeft,
-          image: (AssetImage('assets/images/logo-02.png')),
-          width: 300.0,
-          height: 20.0,
-        ),
-        SizedBox.shrink(),
-        IconButton(
-          icon: Icon(
-            Icons.add,
-            color: Color(0xFFFC5C9C),
-            size: 30,
-          ),
-          onPressed: () {
-            print('Icono1 OK');
-          },
-        ),
-      ],
-    ));
-  }
-
-  //Crear widget para Usuario1
-  Widget InfoUsuario1() {
-    return Container(
-        height: 40.0,
-        width: 380.0,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10.0),
-          color: Color(0xFF9E2A63),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            SizedBox(
-              width: 20,
-            ),
-            Image(
-              alignment: Alignment.topLeft,
-              image: (AssetImage('assets/images/user.png')),
-              width: 50.0,
-              height: 20.0,
-            ),
-            SizedBox(
-              width: 10,
-            ),
-            Text('Usuario1',
-                style: TextStyle(
-                    fontFamily: 'Noir_medium',
-                    color: Colors.white,
-                    fontSize: 20)),
-          ],
-        ));
-  }
-
-  //Crear widget para Campo Post, texto ingresado por el usuario
-  Widget UserPost1() {
-    return Text(
-      'Lorem Ipsum is simply dummy text of the printing and typesetting',
-      textAlign: TextAlign.center,
-      style: const TextStyle(
-          fontFamily: 'Noir_medium', color: Color(0xFFFC5C9C), fontSize: 20),
-    );
-  }
-
-  //Crear widget para Usuario2
-  Widget InfoUsuario2() {
-    return Container(
-        height: 40.0,
-        width: 380.0,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10.0),
-          color: Color(0xFF9E2A63),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            SizedBox(
-              width: 20,
-            ),
-            Image(
-              alignment: Alignment.topLeft,
-              image: (AssetImage('assets/images/user.png')),
-              width: 50.0,
-              height: 20.0,
-            ),
-            SizedBox(
-              width: 10,
-            ),
-            Text('Usuario2',
-                style: TextStyle(
-                    fontFamily: 'Noir_medium',
-                    color: Colors.white,
-                    fontSize: 20)),
-          ],
-        ));
-  }
-
-  //Crear widget para Campo Post, texto ingresado por el usuario
-  Widget UserPost2() {
-    return Text(
-      'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.',
-      textAlign: TextAlign.center,
-      style: const TextStyle(
-          fontFamily: 'Noir_medium', color: Color(0xFFFC5C9C), fontSize: 20),
-    );
-  }
-
-  //Crear widget para Usuario2
-  Widget InfoUsuario3() {
-    return Container(
-        height: 40.0,
-        width: 380.0,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10.0),
-          color: Color(0xFF9E2A63),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            SizedBox(
-              width: 20,
-            ),
-            Image(
-              alignment: Alignment.topLeft,
-              image: (AssetImage('assets/images/user.png')),
-              width: 50.0,
-              height: 20.0,
-            ),
-            SizedBox(
-              width: 10,
-            ),
-            Text('Usuario3',
-                style: TextStyle(
-                    fontFamily: 'Noir_medium',
-                    color: Colors.white,
-                    fontSize: 20)),
-          ],
-        ));
-  }
-
-  //Crear widget para Campo Post, texto ingresado por el usuario
-  Widget UserPost3() {
-    return Text(
-      'Lorem Ipsum is simply dummy text of the printing and typesetting',
-      textAlign: TextAlign.center,
-      style: const TextStyle(
-          fontFamily: 'Noir_medium', color: Color(0xFFFC5C9C), fontSize: 20),
-    );
-  }
-
-}

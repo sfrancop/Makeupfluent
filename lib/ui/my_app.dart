@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:misiontic_template/constants.dart';
+import 'package:misiontic_template/ui/pages/response/screens/makeupfluent_post.dart';
+import 'package:misiontic_template/ui/pages/response/screens/makeupfluent_registro.dart';
+import 'package:misiontic_template/ui/pages/response/screens/makeupfluente_ingresar.dart';
 import 'content_page.dart';
+import 'pages/response/screens/makeulfluent_home_post.dart';
+import 'pages/response/screens/makeupfluent_history.dart';
 //import 'lib/ui/content_page.dart';
 //import 'C:\Users\juand\Documents\JD\Flia Tulay Olmos\Proyectos\Mintic2022\Ciclo 4\Aplicaciones Moviles\Git\Makeupfluent\lib\ui\content_page.dart';
 //import 'pages/content_page.dart';
@@ -10,13 +17,22 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Bottom Nav Video',
       theme: ThemeData(
 
         primarySwatch: Colors.blue,
       ),
-      home: const ContentPage(),
+      initialRoute: login_Route,
+      getPages: [
+        GetPage(name: login_Route, page: () => LoginScreen()),
+        GetPage(name: signUp_Route, page: () => SignUp()),
+        GetPage(name: post_Route, page: () => PostPage()),
+        GetPage(name: history_Route, page: () => HistoryPage()),
+        GetPage(name: home_Route, page: () => ContentPage(), transition: Transition.zoom),
+      ],
+      //home: const ContentPage(),
     );
   }
 }

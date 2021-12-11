@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:misiontic_template/ui/app.dart';
 import 'package:misiontic_template/ui/theme/text_styles.dart';
+
+import '../../../../constants.dart';
 
 // construir una clase para el widget my_app
 class StoriesPage extends StatelessWidget {
@@ -106,6 +109,7 @@ class _HomeState extends State<Home> {
             size: 30,
           ),
           onPressed: () {
+            Get.toNamed(history_Route);
             print('Icono2 OK');
           },
         ),
