@@ -7,9 +7,6 @@ import 'package:misiontic_template/ui/pages/response/screens/makeupfluente_ingre
 import 'content_page.dart';
 import 'pages/response/screens/makeulfluent_home_post.dart';
 import 'pages/response/screens/makeupfluent_history.dart';
-//import 'lib/ui/content_page.dart';
-//import 'C:\Users\juand\Documents\JD\Flia Tulay Olmos\Proyectos\Mintic2022\Ciclo 4\Aplicaciones Moviles\Git\Makeupfluent\lib\ui\content_page.dart';
-//import 'pages/content_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
