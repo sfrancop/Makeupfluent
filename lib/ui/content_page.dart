@@ -15,7 +15,7 @@ class ContentPage extends StatefulWidget {
 class _ContentPageState extends State<ContentPage> {
   int _currentIndex = 0;
 
-  final _inactiveColor = Colors.grey;
+  final_inactiveColor = Colors.grey;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,8 +51,8 @@ class _ContentPageState extends State<ContentPage> {
         BottomNavyBarItem(
           icon: Icon(Icons.message),
           title: Text(
-            'Chat ',
-          ),
+            'Chat',
+            ),
           activeColor: Colors.white,
           inactiveColor: Colors.white.withOpacity(0.4),
           textAlign: TextAlign.center,

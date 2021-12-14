@@ -42,7 +42,7 @@ class _AppState extends State<App> {
             theme: MyTheme.ligthTheme,
             darkTheme: MyTheme.darkTheme,
             themeMode: ThemeMode.system,
-            home: ResponsePage (),
+            home: ResponsePage(),
           );
   }
 }

@@ -17,9 +17,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Bottom Nav Video',
-      theme: ThemeData(
-
-        primarySwatch: Colors.blue,
+      theme: ThemeData(        primarySwatch: Colors.blue,
       ),
       initialRoute: login_Route,
       getPages: [
