@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:misiontic_template/constants.dart';
+import 'package:misiontic_template/theme_changer.dart';
 import 'package:misiontic_template/ui/app.dart';
 import 'package:misiontic_template/ui/theme/text_styles.dart';
 
@@ -13,11 +14,12 @@ class LoginScreen extends StatefulWidget {
   _LoginScreenState createState() => _LoginScreenState();
 }
 
+
 class _LoginScreenState extends State<LoginScreen> {
   final _textController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return  Scaffold(
       body: SafeArea(
         child: Center(
           child: Padding(
@@ -135,7 +137,29 @@ class _LoginScreenState extends State<LoginScreen> {
                         print('Boton Funcionando');
                       },
                     ),
-                  ),                  
+                  ),
+                  SizedBox(
+                    height: 50.0,
+                  ),
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(30),
+                    child: MaterialButton(
+                      color: Color(0xFFFCCDE2),
+                      minWidth: 200.0,
+                      height: 50.0,
+                        child: Text(
+                          'Cambiar tema',
+                          style: TextStyle(
+                            fontFamily: 'Noir_medium',
+                            color: Color(0xFFFC5C9C),
+                            fontSize: 20.0
+                          ),
+                        ),
+                      onPressed: () {
+                        ThemeBuilder.of(context)!.changeTheme();
+                      },
+                    ),
+                  ),                    
                 ],
               ),
             ),
@@ -143,8 +167,25 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       ),
     );
-
-
   }
 }
 
+
+class LoginView extends StatelessWidget {
+  const LoginView({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ThemeBuilder(
+      defaultBrightness: Brightness.dark,
+            builder: (context, _brightness){
+              return MaterialApp(
+                title: "MAKEUPFLUENT",
+                theme: ThemeData(primarySwatch: Colors.blue, brightness: _brightness),
+                home: LoginScreen(),
+                debugShowCheckedModeBanner: false,
+              );
+            },
+          );
+  }
+}

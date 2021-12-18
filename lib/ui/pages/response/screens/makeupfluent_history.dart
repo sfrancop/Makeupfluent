@@ -20,6 +20,7 @@ class HistoryPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "MAKEUPFLUENT",
+      theme: ThemeData(brightness: Brightness.light),
       home: Home(),
       debugShowCheckedModeBanner: false,
     );

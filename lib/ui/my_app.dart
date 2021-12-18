@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: login_Route,
       getPages: [
-        GetPage(name: login_Route, page: () => LoginScreen()),
+        GetPage(name: login_Route, page: () => LoginView()),
         GetPage(name: signUp_Route, page: () => SignUp()),
         GetPage(name: post_Route, page: () => PostPage()),
         GetPage(name: history_Route, page: () => HistoryPage()),
