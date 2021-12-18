@@ -15,7 +15,7 @@ class ContentPage extends StatefulWidget {
 class _ContentPageState extends State<ContentPage> {
   int _currentIndex = 0;
 
-  final_inactiveColor = Colors.grey;
+  var final_inactiveColor = Colors.grey;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
