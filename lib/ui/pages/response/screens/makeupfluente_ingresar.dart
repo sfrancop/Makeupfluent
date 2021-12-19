@@ -5,6 +5,23 @@ import 'package:misiontic_template/constants.dart';
 import 'package:misiontic_template/theme_changer.dart';
 import 'package:misiontic_template/ui/app.dart';
 import 'package:misiontic_template/ui/theme/text_styles.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+Brightness _theme = Brightness.dark;
+
+Future<void> setTheme() async {
+  final SharedPreferences prefs = await SharedPreferences.getInstance();
+  final bool? outPut = await prefs.getBool("theme");
+  if(outPut == true){
+    setState(() => _theme = Brightness.dark);
+  }
+  if(outPut == false){
+    setState(() => _theme = Brightness.light);
+  }
+}
+
+void setState(Brightness Function() param0) {
+}
 
 // construir una clase para el widget Myapp
 class LoginScreen extends StatefulWidget {
@@ -156,6 +173,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         ),
                       onPressed: () {
+                        //print(ThemeBuilder.of(context)!.getIsDark());
                         ThemeBuilder.of(context)!.changeTheme();
                       },
                     ),
@@ -170,6 +188,9 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 }
 
+changeButtomPressed(BuildContext context) async {
+
+}
 
 class LoginView extends StatelessWidget {
   const LoginView({Key? key}) : super(key: key);
@@ -177,11 +198,11 @@ class LoginView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ThemeBuilder(
-      defaultBrightness: Brightness.dark,
-            builder: (context, _brightness){
+      defaultBrightness: _theme,
+            builder: (context, _theme){
               return MaterialApp(
                 title: "MAKEUPFLUENT",
-                theme: ThemeData(primarySwatch: Colors.blue, brightness: _brightness),
+                theme: ThemeData(primarySwatch: Colors.blue, brightness: _theme),
                 home: LoginScreen(),
                 debugShowCheckedModeBanner: false,
               );

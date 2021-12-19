@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class ThemeBuilder extends StatefulWidget {
 
@@ -17,12 +18,15 @@ class _ThemeBuilderState extends State<ThemeBuilder>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Brightness _brightness;
+  late bool isDarkMode;
+  late bool outPut;
 
   @override
   void initState() {
     super.initState();
     _controller = AnimationController(vsync: this);
     _brightness = widget.defaultBrightness;
+    isDarkMode = true;
 
     if(mounted)
     setState(() {
@@ -37,11 +41,27 @@ class _ThemeBuilderState extends State<ThemeBuilder>
     _controller.dispose();
   }
 
-  void changeTheme(){
+  Future<void> changeTheme() async {
     
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+
     setState(() {
+
       _brightness = _brightness == Brightness.dark ? Brightness.light : Brightness.dark;
+
+      isDarkMode = isDarkMode == true ? false : true;
+      print(getIsDark());
+      prefs.setBool('theme', getIsDark());
     });
+  }
+
+
+  bool getIsDark(){
+    return isDarkMode;
+  }
+
+  Brightness getCurrentBrightness(){
+    return _brightness;
   }
 
   @override
