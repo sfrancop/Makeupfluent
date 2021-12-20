@@ -12,16 +12,15 @@ Brightness _theme = Brightness.dark;
 Future<void> setTheme() async {
   final SharedPreferences prefs = await SharedPreferences.getInstance();
   final bool? outPut = await prefs.getBool("theme");
-  if(outPut == true){
+  if (outPut == true) {
     setState(() => _theme = Brightness.dark);
   }
-  if(outPut == false){
+  if (outPut == false) {
     setState(() => _theme = Brightness.light);
   }
 }
 
-void setState(Brightness Function() param0) {
-}
+void setState(Brightness Function() param0) {}
 
 // construir una clase para el widget Myapp
 class LoginScreen extends StatefulWidget {
@@ -31,12 +30,11 @@ class LoginScreen extends StatefulWidget {
   _LoginScreenState createState() => _LoginScreenState();
 }
 
-
 class _LoginScreenState extends State<LoginScreen> {
   final _textController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       body: SafeArea(
         child: Center(
           child: Padding(
@@ -50,7 +48,8 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               child: Column(
                 children: [
-                  Text('INGRESAR',
+                  Text(
+                    'INGRESAR',
                     style: TextStyle(
                       color: Color(0xFF9E2A63),
                       fontFamily: 'Lemon Milk',
@@ -67,7 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     height: 150.0,
                   ),
                   SizedBox(
-                    height: 30.0,
+                    height: 20.0,
                   ),
                   Container(
                     width: 300.0,
@@ -77,10 +76,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         controller: _textController,
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontFamily: 'Noir_medium',
-                          color: Color(0xFFFC5C9C),
-                          fontSize: 20.0
-                        ),
+                            fontFamily: 'Noir_medium',
+                            color: Color(0xFFFC5C9C),
+                            fontSize: 20.0),
                         decoration: InputDecoration(
                           hintText: 'Correo',
                           fillColor: Color(0xFFFCCDE2),
@@ -90,7 +88,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   SizedBox(
-                    height: 25.0,
+                    height: 20.0,
                   ),
                   Container(
                     width: 300.0,
@@ -98,10 +96,11 @@ class _LoginScreenState extends State<LoginScreen> {
                       borderRadius: BorderRadius.circular(30.0),
                       child: TextField(
                         textAlign: TextAlign.center,
+                        obscureText: true, //ocultar contrasenia
                         style: TextStyle(
-                          fontFamily: 'Noir_medium',
-                          color: Color(0xFFFC5C9C),
-                          fontSize: 20),
+                            fontFamily: 'Noir_medium',
+                            color: Color(0xFFFC5C9C),
+                            fontSize: 20),
                         decoration: InputDecoration(
                           hintText: 'Contraseña',
                           fillColor: Color(0xFFFCCDE2),
@@ -111,22 +110,21 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   SizedBox(
-                    height: 25.0,
+                    height: 20.0,
                   ),
                   TextButton(
                     child: Text('No tienes cuenta? Creala',
-                      style: TextStyle(
-                      fontFamily: 'Noir_medium',
-                      color: Color(0xFFFC5C9C),
-                      fontSize: 20)
-                    ),
+                        style: TextStyle(
+                            fontFamily: 'Noir_medium',
+                            color: Color(0xFFFC5C9C),
+                            fontSize: 20)),
                     onPressed: () {
                       Get.toNamed(signUp_Route);
                       print('Boton Funcionando');
                     },
                   ),
                   SizedBox(
-                    height: 25.0,
+                    height: 20.0,
                   ),
                   ClipRRect(
                     borderRadius: BorderRadius.circular(30),
@@ -134,19 +132,19 @@ class _LoginScreenState extends State<LoginScreen> {
                       color: Color(0xFFFCCDE2),
                       minWidth: 200.0,
                       height: 50.0,
-                        child: Text(
-                          'Listo',
-                          style: TextStyle(
+                      child: Text(
+                        'Listo',
+                        style: TextStyle(
                             fontFamily: 'Noir_medium',
                             color: Color(0xFFFC5C9C),
-                            fontSize: 20.0
-                          ),
-                        ),
+                            fontSize: 20.0),
+                      ),
                       onPressed: () {
                         if (_textController.text.isEmpty) {
-                          Get.snackbar('Error', 'Campo Correo no puede estar vacio',
-                            icon: Icon(Icons.alarm),
-                            backgroundColor: Colors.red);
+                          Get.snackbar(
+                              'Error', 'Campo Correo no puede estar vacio',
+                              icon: Icon(Icons.alarm),
+                              backgroundColor: Colors.red);
                         } else {
                           final name = _textController.text;
                           Get.offNamed(home_Route, arguments: name);
@@ -156,7 +154,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   SizedBox(
-                    height: 50.0,
+                    height: 30.0,
                   ),
                   ClipRRect(
                     borderRadius: BorderRadius.circular(30),
@@ -164,20 +162,19 @@ class _LoginScreenState extends State<LoginScreen> {
                       color: Color(0xFFFCCDE2),
                       minWidth: 200.0,
                       height: 50.0,
-                        child: Text(
-                          'Cambiar tema',
-                          style: TextStyle(
+                      child: Text(
+                        'Cambiar tema',
+                        style: TextStyle(
                             fontFamily: 'Noir_medium',
                             color: Color(0xFFFC5C9C),
-                            fontSize: 20.0
-                          ),
-                        ),
+                            fontSize: 20.0),
+                      ),
                       onPressed: () {
                         //print(ThemeBuilder.of(context)!.getIsDark());
                         ThemeBuilder.of(context)!.changeTheme();
                       },
                     ),
-                  ),                    
+                  ),
                 ],
               ),
             ),
@@ -188,9 +185,7 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 }
 
-changeButtomPressed(BuildContext context) async {
-
-}
+changeButtomPressed(BuildContext context) async {}
 
 class LoginView extends StatelessWidget {
   const LoginView({Key? key}) : super(key: key);
@@ -199,14 +194,14 @@ class LoginView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ThemeBuilder(
       defaultBrightness: _theme,
-            builder: (context, _theme){
-              return MaterialApp(
-                title: "MAKEUPFLUENT",
-                theme: ThemeData(primarySwatch: Colors.blue, brightness: _theme),
-                home: LoginScreen(),
-                debugShowCheckedModeBanner: false,
-              );
-            },
-          );
+      builder: (context, _theme) {
+        return MaterialApp(
+          title: "MAKEUPFLUENT",
+          theme: ThemeData(primarySwatch: Colors.blue, brightness: _theme),
+          home: LoginScreen(),
+          debugShowCheckedModeBanner: false,
+        );
+      },
+    );
   }
 }
