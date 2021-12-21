@@ -1,11 +1,14 @@
 //import 'dart:html';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:misiontic_template/constants.dart';
+import 'package:misiontic_template/main.dart';
 import 'package:misiontic_template/theme_changer.dart';
 import 'package:misiontic_template/ui/app.dart';
 import 'package:misiontic_template/ui/theme/text_styles.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 Brightness _theme = Brightness.dark;
 
@@ -24,6 +27,7 @@ void setState(Brightness Function() param0) {}
 
 // construir una clase para el widget Myapp
 class LoginScreen extends StatefulWidget {
+
   const LoginScreen({Key? key}) : super(key: key);
 
   @override
@@ -39,6 +43,9 @@ Brightness getTheme(){
 class _LoginScreenState extends State<LoginScreen> {
   final _textController = TextEditingController();
   @override
+  void initState(){
+    super.initState();
+  }
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
@@ -86,7 +93,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             color: Color(0xFFFC5C9C),
                             fontSize: 20.0),
                         decoration: InputDecoration(
-                          hintText: 'Correo',
+                          hintText: 'Nombre de usuario',
                           fillColor: Color(0xFFFCCDE2),
                           filled: true,
                         ),
@@ -146,9 +153,11 @@ class _LoginScreenState extends State<LoginScreen> {
                             fontSize: 20.0),
                       ),
                       onPressed: () {
-                        if (_textController.text.isEmpty) {
+                        Map data = getUsers();
+                        String insertedUsername = _textController.text;
+                        if (data[insertedUsername] == null) {
                           Get.snackbar(
-                              'Error', 'Campo Correo no puede estar vacio',
+                              'Error', 'Usuario incorrecto',
                               icon: Icon(Icons.alarm),
                               backgroundColor: Colors.red);
                         } else {
@@ -177,7 +186,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       onPressed: () {
                         theeeme =  ThemeBuilder.of(context)!.getIsDarkTheme();
-                        print(theeeme);
+                        //print(theeeme);
                         ThemeBuilder.of(context)!.changeTheme();
                         //print(ThemeBuilder.of(context)!.getCurrentBrightness());
                       },

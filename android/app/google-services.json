@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "825231628053",
-    "project_id": "makeupfluent-5237f",
-    "storage_bucket": "makeupfluent-5237f.appspot.com"
+    "project_number": "88621640009",
+    "project_id": "misiontic-2022",
+    "storage_bucket": "misiontic-2022.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:825231628053:android:2a79463ed5154ba2b83b1c",
+        "mobilesdk_app_id": "1:88621640009:android:30674c2f75e0a1771c9298",
         "android_client_info": {
           "package_name": "com.example.misiontic_template"
         }
       },
       "oauth_client": [
         {
-          "client_id": "825231628053-cojhc3d7uei7p2rqc0o98ak3gqopg1gk.apps.googleusercontent.com",
+          "client_id": "88621640009-t1sn06s7cucj001jjh78qgsnb9ffrdll.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC2m2isV3xjZsLo4RZf0TZLh16JXtl1yac"
+          "current_key": "AIzaSyDR5VRs41ULWlL8u_ryJ3p3VaY2soOVUHM"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "825231628053-cojhc3d7uei7p2rqc0o98ak3gqopg1gk.apps.googleusercontent.com",
+              "client_id": "88621640009-t1sn06s7cucj001jjh78qgsnb9ffrdll.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
