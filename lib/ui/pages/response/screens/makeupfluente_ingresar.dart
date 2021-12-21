@@ -30,6 +30,12 @@ class LoginScreen extends StatefulWidget {
   _LoginScreenState createState() => _LoginScreenState();
 }
 
+Brightness theeeme = Brightness.dark;
+
+Brightness getTheme(){
+  return theeeme;
+}
+
 class _LoginScreenState extends State<LoginScreen> {
   final _textController = TextEditingController();
   @override
@@ -170,8 +176,10 @@ class _LoginScreenState extends State<LoginScreen> {
                             fontSize: 20.0),
                       ),
                       onPressed: () {
-                        //print(ThemeBuilder.of(context)!.getIsDark());
+                        theeeme =  ThemeBuilder.of(context)!.getIsDarkTheme();
+                        print(theeeme);
                         ThemeBuilder.of(context)!.changeTheme();
+                        //print(ThemeBuilder.of(context)!.getCurrentBrightness());
                       },
                     ),
                   ),
@@ -185,19 +193,17 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 }
 
-changeButtomPressed(BuildContext context) async {}
-
 class LoginView extends StatelessWidget {
   const LoginView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ThemeBuilder(
-      defaultBrightness: _theme,
-      builder: (context, _theme) {
+      defaultBrightness: theeeme,
+      builder: (context, defaultBrightness) {
         return MaterialApp(
           title: "MAKEUPFLUENT",
-          theme: ThemeData(primarySwatch: Colors.blue, brightness: _theme),
+          theme: ThemeData(primarySwatch: Colors.blue, brightness: defaultBrightness),
           home: LoginScreen(),
           debugShowCheckedModeBanner: false,
         );

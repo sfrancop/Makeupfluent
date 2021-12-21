@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:misiontic_template/constants.dart';
 import 'package:misiontic_template/ui/app.dart';
+import 'package:misiontic_template/ui/pages/response/screens/makeupfluente_ingresar.dart';
 import 'package:misiontic_template/ui/theme/text_styles.dart';
+
+import '../../../../theme_changer.dart';
 
 // construir una clase para el widget my_app
 class HomePage extends StatelessWidget {
@@ -188,3 +191,21 @@ class HomePage extends StatelessWidget {
   }
 }
 
+class HomeView extends StatelessWidget {
+  const HomeView({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ThemeBuilder(
+      defaultBrightness: getTheme(),
+      builder: (context, defaultBrightness) {
+        return MaterialApp(
+          title: "MAKEUPFLUENT",
+          theme: ThemeData(primarySwatch: Colors.blue, brightness: defaultBrightness),
+          home: HomePage(),
+          debugShowCheckedModeBanner: false,
+        );
+      },
+    );
+  }
+}

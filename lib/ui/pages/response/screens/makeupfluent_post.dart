@@ -3,6 +3,9 @@ import 'package:get/get.dart';
 import 'package:misiontic_template/ui/app.dart';
 import 'package:misiontic_template/ui/theme/text_styles.dart';
 
+import '../../../../theme_changer.dart';
+import 'makeupfluente_ingresar.dart';
+
 //void main() {
 //  WidgetsFlutterBinding.ensureInitialized();
 //  runApp(const App());
@@ -18,10 +21,16 @@ class PostPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "MAKEUPFLUENT",
-      home: Home(),
-      debugShowCheckedModeBanner: false,
+    return ThemeBuilder(
+      defaultBrightness: getTheme(),
+      builder: (context, defaultBrightness) {
+        return MaterialApp(
+          title: "MAKEUPFLUENT",
+          theme: ThemeData(primarySwatch: Colors.blue, brightness: defaultBrightness),
+          home: Home(),
+          debugShowCheckedModeBanner: false,
+        );
+      },
     );
   }
 }

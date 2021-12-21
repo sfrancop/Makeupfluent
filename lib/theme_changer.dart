@@ -50,11 +50,25 @@ class _ThemeBuilderState extends State<ThemeBuilder>
       _brightness = _brightness == Brightness.dark ? Brightness.light : Brightness.dark;
 
       isDarkMode = isDarkMode == true ? false : true;
-      print(getIsDark());
+      //print(getIsDark());
       prefs.setBool('theme', getIsDark());
+      //var aa = prefs.getBool('theme');
+      //print(aa);
     });
   }
 
+  late Brightness theme = Brightness.light;
+
+  Future <void> isDarkTheme() async{
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    if(prefs.getBool("theme") == false){
+      theme = Brightness.dark;
+    }
+  }
+
+  Brightness getIsDarkTheme(){
+    return theme;
+  }
 
   bool getIsDark(){
     return isDarkMode;

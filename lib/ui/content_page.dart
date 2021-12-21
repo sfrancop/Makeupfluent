@@ -70,7 +70,7 @@ class _ContentPageState extends State<ContentPage> {
 
   Widget getBody() {
     List<Widget> pages = [
-      HomePage(),
+      HomeView(),
       StoriesPage(),
       InboxPage(),
       ProductPage(),

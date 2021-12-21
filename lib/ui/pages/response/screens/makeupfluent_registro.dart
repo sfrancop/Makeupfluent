@@ -5,6 +5,9 @@ import 'package:misiontic_template/constants.dart';
 import 'package:misiontic_template/ui/app.dart';
 import 'package:misiontic_template/ui/theme/text_styles.dart';
 
+import '../../../../theme_changer.dart';
+import 'makeupfluente_ingresar.dart';
+
 // construir una clase para el widget Myapp
 class SignUp extends StatefulWidget {
   const SignUp({Key? key}) : super(key: key);
@@ -149,6 +152,25 @@ class _SignUpState extends State<SignUp> {
           ),
         ),
       ),
+    );
+  }
+}
+
+class SignUpView extends StatelessWidget {
+  const SignUpView({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ThemeBuilder(
+      defaultBrightness: getTheme(),
+      builder: (context, defaultBrightness) {
+        return MaterialApp(
+          title: "MAKEUPFLUENT",
+          theme: ThemeData(primarySwatch: Colors.blue, brightness: defaultBrightness),
+          home: SignUp(),
+          debugShowCheckedModeBanner: false,
+        );
+      },
     );
   }
 }
