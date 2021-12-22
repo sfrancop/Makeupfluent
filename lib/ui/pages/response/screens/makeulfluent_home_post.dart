@@ -7,188 +7,126 @@ import 'package:misiontic_template/ui/theme/text_styles.dart';
 
 import '../../../../theme_changer.dart';
 
+List<Widget> posts = [
+  Encabezado(),
+  Post("Rodrigo", "Necesito un administrador para mi tienda, ¿alguien se le mide?"),
+  SizedBox(height: 25),
+  Post("Nataly", "¿Alguien sabe de tiendas ecologicas de maquillaje? Que me escriba al interno."),
+  SizedBox(height: 25),
+  Post("Armando", "Pedí un producto para mi esposa y salio defectuoso, se supone que mi nuevo producto está en camino. El asunto es que se ha demorado mucho en llegar, ¿alguien sabe si la aplicación puede intervenir?"),
+  SizedBox(height: 25),
+  Post("Juliana", "Estoy buscando labiales libres de plomo, ¿cuáles marcas me recomiendan?"),
+  SizedBox(height: 25),
+  Post("Luis", "Soy comerciante. Únicamente marcas fabricantes de makeup 'NON TESTED ON ANIMALS' por favor escribirme al interno, estoy interesado en comercializar al por mayor."),
+  SizedBox(height: 25),
+  Post("Sergio", "Necesito un administrador para mi tienda, ¿alguien se le mide?"),
+  SizedBox(height: 25),
+  Post("Nataly", "¿Alguien sabe de tiendas ecologicas? Que me escriba al interno."),
+  SizedBox(height: 25),
+  Post("Nataly", "¿Alguien sabe de tiendas ecologicas? Que me escriba al interno."),
+  SizedBox(height: 25),
+  Post("Nataly", "¿Alguien sabe de tiendas ecologicas? Que me escriba al interno."),
+  SizedBox(height: 25),
+  Post("Nataly", "¿Alguien sabe de tiendas ecologicas? Que me escriba al interno."),
+  SizedBox(height: 25),
+
+  ];
+
 // construir una clase para el widget my_app
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  HomePage({Key? key}) : super(key: key);
+  final PageController _controller = PageController(initialPage: 0);
 
   @override
   Widget build(BuildContext context) {
-    String name = Get.arguments;
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            //Contenedor para encabezado Vista
-            Container(
-                child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Image(
-                  alignment: Alignment.topLeft,
-                  image: (AssetImage('assets/images/logo-02.png')),
-                  width: 300.0,
-                  height: 20.0,
-                ),
-                SizedBox.shrink(),
-                IconButton(
-                  icon: Icon(
-                    Icons.add,
-                    color: Color(0xFFFC5C9C),
-                    size: 30,
-                  ),
-                  onPressed: () {
-                    Get.toNamed(post_Route);
-                    print('Icono1 OK');
-                  },
-                ),
-              ],
-            )),
-            //Presentar nombre de Usuario en Vista
-            Text("Hola ${name}"),
-            SizedBox(
-              height: 15.0,
-            ),
-            //Contenedor para Encabezado Usuario 1
-            Container(
-                height: 40.0,
-                width: 380.0,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  color: Color(0xFF9E2A63),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Image(
-                      alignment: Alignment.topLeft,
-                      image: (AssetImage('assets/images/user.png')),
-                      width: 50.0,
-                      height: 20.0,
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text('Usuario1',
-                        style: TextStyle(
-                            fontFamily: 'Noir_medium',
-                            color: Colors.white,
-                            fontSize: 20.0)),
-                  ],
-                )),
-            SizedBox(
-              height: 5.0,
-            ),
-            //Representacion Texto Escrito por Usuario
-            Text(
-              'Lorem Ipsum is simply dummy text of the printing and typesetting',
-              textAlign: TextAlign.center,
-              style: const TextStyle(
-                  fontFamily: 'Noir_medium',
-                  color: Color(0xFFFC5C9C),
-                  fontSize: 20),
-            ),
-            SizedBox(
-              height: 15.0,
-            ),
-            //Contenedor para Encabezado Usuario 2
-            Container(
-                height: 40.0,
-                width: 380.0,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  color: Color(0xFF9E2A63),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Image(
-                      alignment: Alignment.topLeft,
-                      image: (AssetImage('assets/images/user.png')),
-                      width: 50.0,
-                      height: 20.0,
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text('Usuario2',
-                        style: TextStyle(
-                            fontFamily: 'Noir_medium',
-                            color: Colors.white,
-                            fontSize: 20.0)),
-                  ],
-                )),
-            SizedBox(
-              height: 5.0,
-            ),
-            //Representacion Texto Escrito por Usuario2
-            Text(
-              'Lorem Ipsum is simply dummy text of the printing and typesetting',
-              textAlign: TextAlign.center,
-              style: const TextStyle(
-                  fontFamily: 'Noir_medium',
-                  color: Color(0xFFFC5C9C),
-                  fontSize: 20),
-            ),
-            SizedBox(
-              height: 15.0,
-            ),
-            //Contenedor para Encabezado Usuario 3
-            Container(
-                height: 40.0,
-                width: 380.0,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  color: Color(0xFF9E2A63),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Image(
-                      alignment: Alignment.topLeft,
-                      image: (AssetImage('assets/images/user.png')),
-                      width: 50.0,
-                      height: 20.0,
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text('Usuario3',
-                        style: TextStyle(
-                            fontFamily: 'Noir_medium',
-                            color: Colors.white,
-                            fontSize: 20.0)),
-                  ],
-                )),
-            SizedBox(
-              height: 5.0,
-            ),
-            //Representacion Texto Escrito por Usuario2
-            Text(
-              'Lorem Ipsum is simply dummy text of the printing and typesetting',
-              textAlign: TextAlign.center,
-              style: const TextStyle(
-                  fontFamily: 'Noir_medium',
-                  color: Color(0xFFFC5C9C),
-                  fontSize: 20),
-            ),
-            SizedBox(
-              height: 15.0,
-            ),
-          ],
-        ),
-      ),
-    );
+      body: ListView(children: posts,)
+      );
   }
+}
+
+Widget Encabezado() {
+    return Container(
+        child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Image(
+          alignment: Alignment.topLeft,
+          image: (AssetImage('assets/images/logo-02.png')),
+          width: 300.0,
+          height: 20.0,
+        ),
+        SizedBox.shrink(),
+        IconButton(
+          icon: Icon(
+            Icons.person_rounded,
+            color: Color(0xFFFC5C9C),
+            size: 30,
+          ),
+          onPressed: () {
+            print('Icono1 OK');
+          },
+        ),
+        IconButton(
+          icon: Icon(
+            Icons.add,
+            color: Color(0xFFFC5C9C),
+            size: 30,
+          ),
+          onPressed: () {
+            Get.toNamed(history_Route);
+            print('Icono2 OK');
+          },
+        ),
+      ],
+    ));
+  }
+
+Widget Post(String nombre, String mensaje){
+  return Container(
+                height: 80.0,
+                width: 50.0,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.0),
+                  color: Color(0xFF9E2A63),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      width: 20,
+                    ),
+                    Image(
+                      alignment: Alignment.topLeft,
+                      image: (AssetImage('assets/images/user.png')),
+                      width: 50.0,
+                      height: 20.0,
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text(nombre,
+                        style: TextStyle(
+                            fontFamily: 'Noir_medium',
+                            color: Colors.white,
+                            fontSize: 20.0)),
+                    SizedBox(
+                      width: 15,
+                    ),
+                    Expanded(child: Text(mensaje,
+                        maxLines: 5,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                            fontFamily: 'Noir_medium',
+                            color: Colors.white,
+                            fontSize: 14.0))),
+                    SizedBox(
+                      width: 15,
+                    ),
+                  ],
+                )
+              
+                );
 }
 
 class HomeView extends StatelessWidget {

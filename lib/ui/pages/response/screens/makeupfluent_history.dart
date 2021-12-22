@@ -71,7 +71,7 @@ class _HomeState extends State<Home> {
           SizedBox(
             height: 330.0,
           ),
-          BarraInfNav()
+          //BarraInfNav()
         ],
       )),
     );
